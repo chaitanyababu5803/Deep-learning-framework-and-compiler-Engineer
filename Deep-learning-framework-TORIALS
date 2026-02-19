@@ -1,0 +1,71 @@
+Deep-learning-framework
+************************
+Deep-learning-framework-and-compiler-Engineer
+A Deep Learning Framework and Compiler Engineer operates at the intersection of high-level AI research and low-level hardware execution, bridging the gap between how models are designed and how they are actually run on silicon. 0.4.9, 0.4.45 
+Core Responsibilities
+Framework Design & Optimization: Building and maintaining the core of frameworks like PyTorch and TensorFlow, focusing on how they represent neural network architectures in memory. 0.4.17, 0.4.35
+Compiler Development: Designing specialized toolchains to translate high-level machine learning models into optimized, executable code for specific hardware backends like CPUs, GPUs, NPUs, and custom AI accelerators. 0.4.9, 0.4.31
+Graph Optimization: Analyzing deep learning networks to implement compiler passes that optimize computational graphs, handle tiling, and manage memory allocation. 0.4.6, 0.4.30
+Hardware Integration: Integrating vendor-specific SDKs (e.g., NVIDIA TensorRT, ARM NN) into inference frameworks to ensure peak performance on target accelerators. 0.4.1, 0.4.2 
+Key Technical Skills
+Languages: High proficiency in C/C++ (for core engine/compiler development) and Python (for scripting and framework integration). 0.4.1, 0.4.19
+Compiler Frameworks: Experience with LLVM, MLIR, TVM, or XLA. 0.4.2, 0.4.10
+Parallel Programming: Knowledge of CUDA or OpenCL for kernel programming and performance tuning. 0.4.15, 0.4.3
+Deep Learning Knowledge: Understanding of network architectures (e.g., ResNet, MobileNet) and algorithms ranging from Computer Vision to Large Language Models (LLMs). 0.4.21, 0.4.23 
+Career Outlook
+Companies Hiring: Major tech players including Qualcomm, Apple, NVIDIA, Meta, and Amazon Annapurna Labs. 0.4.2, 0.4.16, 0.4.19
+Salary Expectations: In the US, base pay can range from $129,000 to over $272,000 depending on seniority and location. 0.4.19, 0.4.33 
+Are you looking for job openings in this field, or do you need a learning roadmap to master these specific compiler technologies?
+
+
+
+
+
+
+
+15 sites
+AI Compiler Engineer - Codeplay Software Ltd
+AI Compiler Engineer * Responsibilities. Design and implement compiler optimizations for deep learning operators such as matrix mu...
+
+Codeplay Software
+NEC HPC platform for Deep Learning
+Deep Learning frameworks, like TensorFlow and PyTorch, execute their neural networks on a layer-by-layer basis, which can result i...
+
+sx-aurora.info
+Deep Learning Compilers: A Deep-Dive | by Sahib Dhanjal
+17 Feb 2025 — More often than not, dedicated AI/ML compilers are hard at work behind the scenes. These specialized tools take high-level code fr...
+
+AI Advances
+
+Show all
+TUTORIALS
+To master the role of a Deep Learning Framework and Compiler Engineer, you must bridge the gap between high-level AI research and low-level system performance.
+1. Essential Framework Foundations
+Before diving into compilers, you must understand how frameworks represent and execute models.
+PyTorch Internals: Learn to migrate Python models to TorchScript for production and understand its C++ frontend to see how the engine handles tensors.
+TensorFlow XLA: Explore Accelerated Linear Algebra (XLA), which is TensorFlow's domain-specific compiler for optimizing model graphs.
+Hands-on Guide: The book PyTorch Deep Learning Hands-On covers the full workflow from prototyping to high-performance deployment.
+2. Deep Learning Compiler Toolchains
+The industry relies on specific open-source stacks to automate hardware-specific optimizations. 
+Apache TVM: This is the industry-standard end-to-end compiler stack. Follow the TVM Getting Started Guide to learn how to ingest models from PyTorch/ONNX and generate optimized kernels for CPUs, GPUs, or FPGAs.
+MLIR (Multi-Level Intermediate Representation): Developed by the LLVM Project, MLIR is a "meta-compiler" used to build other compilers. Use the Toy Tutorial to learn how to define language-specific dialects and perform high-level graph rewrites.
+LLVM: Since most ML compilers (like TVM and XLA) use LLVM as their backend, mastering LLVM IR (Intermediate Representation) is critical for low-level code generation. 
+3. Performance & Hardware Optimization
+Translating models is only half the battle; they must be fast.
+GPU Programming: Take the Johns Hopkins GPU Programming Specialization to master CUDA and C++ for parallel execution.
+Optimization Techniques: Study Quantization (reducing precision to INT8), Pruning (removing redundant weights), and Operator Fusion (combining multiple layers into one kernel).
+Targeting the Edge: For mobile/IoT, refer to Deep Learning with MATLAB and Python for tutorials on deploying to NVIDIA Jetson and ARM Cortex-M. 
+4. Recommended Roadmap
+Phase	Focus Area	Recommended Resource
+I	C++/Python Systems	C++ Data Structures & Algorithms
+II	ML Frameworks	PyTorch for Deep Learning (DeepLearning.AI)
+III	Compiler Design	Nand2Tetris (Hebrew University)
+IV	AI Compilers	Apache TVM Tutorials
+
+**************************
+https://tvm.apache.org/
+
+https://mlir.llvm.org/docs/Tutorials/
+
+https://mlir.llvm.org/docs/Tutorials/Toy/
+**********************************
