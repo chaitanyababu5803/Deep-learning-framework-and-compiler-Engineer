@@ -1,0 +1,72 @@
+Deep-learning-framework-
+**************************************
+BASIC PROJECT CODE
+To get started, the most practical project is building a custom operation (kernel) and integrating it into a framework like PyTorch. This mimics the daily work of a framework engineer: writing high-performance C++ backend code and exposing it to Python.
+Project: Custom C++ Squared Difference Kernel
+This project creates a custom SquaredDifference operation in C++, compiles it using setuptools, and benchmarks it against standard Python-based PyTorch.
+1. Write the C++ Kernel (squared_diff.cpp)
+This file defines the logic and binds it to Python using pybind11.
+cpp
+#include <torch/extension.h>
+#include <vector>
+
+// High-performance C++ implementation
+torch::Tensor squared_diff(torch::Tensor a, torch::Tensor b) {
+  // ATen is the underlying C++ library for PyTorch
+  return (a - b) * (a - b); 
+}
+
+// Bind the C++ function to a Python module
+PYBIND11_MODULE(TORCH_EXTENSION_NAME, m) {
+  m.def("forward", &squared_diff, "Squared Difference forward");
+}
+Use code with caution.
+
+2. Create the Build Script (setup.py)
+Use the PyTorch C++ Extension utility to compile the code.
+python
+from setuptools import setup
+from torch.utils.cpp_extension import BuildExtension, CppExtension
+
+setup(
+    name='squared_diff_cpp',
+    ext_modules=[
+        CppExtension('squared_diff_cpp', ['squared_diff.cpp']),
+    ],
+    cmdclass={
+        'build_ext': BuildExtension
+    })
+Use code with caution.
+
+3. Compile and Run
+Run the following in your terminal to compile the extension:
+bash
+python setup.py install
+Use code with caution.
+
+4. Test in Python (test.py)
+Now, use your custom "compiler-level" code just like a native PyTorch function.
+python
+import torch
+import squared_diff_cpp
+import time
+
+# Create large tensors
+a = torch.randn(10000, 10000)
+b = torch.randn(10000, 10000)
+
+# Run custom C++ kernel
+start = time.time()
+output = squared_diff_cpp.forward(a, b)
+print(f"C++ Kernel Time: {time.time() - start:.4f}s")
+
+# Verify correctness against native PyTorch
+assert torch.allclose(output, (a - b)**2)
+print("Validation Successful!")
+Use code with caution.
+
+Next Steps for Your Portfolio
+Optimization: Rewrite the C++ kernel using OpenMP for multi-core CPU parallelization.
+Hardware Backend: Port this kernel to CUDA (using a .cu file) to run it on an NVIDIA GPU.
+Graph Compilation: Use Apache TVM to automatically compile this same operation for an ARM or RISC-V processor.
+Do you want to try adding CUDA support to this specific kernel next, or would you prefer to see how to use MLIR to optimize a graph?
